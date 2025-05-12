@@ -1,0 +1,13 @@
+{
+  "name": "free-security-tools-tests",
+  "version": "1.0.0",
+  "description": "Playwright test automation for https://s4e.io/free-security-tools",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.1"
+  }
+}

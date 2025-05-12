@@ -1,0 +1,48 @@
+import pandas as pd
+
+# Test case verilerini oluştur
+data = {
+    "Test Case ID": ["TC001", "TC002", "TC003", "TC004", "TC005", "TC006"],
+    "Test Adı": [
+        "Sayfanın Başarıyla Yüklenmesi",
+        "Tool Kartlarının Görüntülenmesi",
+        "Arama (Search) Fonksiyonelliği",
+        "Dış Linkler Yeni Sekmede Açılıyor mu?",
+        "Mobil Görünüm Uyumluluğu (Edge Case)",
+        "Arama Kutusuna Boşluk Girilmesi (Edge)"
+    ],
+    "Ön Koşullar": [
+        "İnternet bağlantısı mevcut",
+        "Sayfa yüklenmiş olmalı",
+        "Sayfa yüklenmiş ve arama alanı görünür",
+        "Tool kartlarında linkler mevcut",
+        "Mobil cihaz veya responsive mod açık",
+        "Sayfa yüklenmiş olmalı"
+    ],
+    "Test Adımları": [
+        "1. https://s4e.io/free-security-tools adresine git",
+        "1. Sayfa yüklendikten sonra\n2. Tüm 'Tool' kartlarının görünüp görünmediğini kontrol et",
+        "1. Arama kutusuna 'firewall' yaz\n2. Sonuçların filtrelenip filtrelenmediğini kontrol et",
+        "1. Her karttaki 'Visit' ya da benzeri dış bağlantıya tıkla\n2. Bağlantının yeni sekmede açıldığını kontrol et",
+        "1. Tarayıcıyı 375x667 çözünürlüğe getir\n2. Sayfanın hizalanması ve okunabilirliği kontrol et",
+        "1. Arama kutusuna sadece boşluk karakterleri gir\n2. Sayfa davranışını kontrol et"
+    ],
+    "Beklenen Sonuç": [
+        "Sayfa 200 OK statüsü ile yüklenmeli, başlık görünmeli",
+        "Tüm kartlar eksiksiz görünmeli",
+        "İlgili araçlar listelenmeli, alakasız olanlar gizlenmeli",
+        "Her dış link target=\"_blank\" özelliğiyle yeni sekmede açılmalı",
+        "Tüm içerik responsive görünmeli, taşma ya da hizalama problemi olmamalı",
+        "Liste değişmemeli, tüm araçlar varsayılan şekilde görünmeye devam etmeli"
+    ],
+    "Gerçek Sonuç (Opsiyonel)": ["" for _ in range(6)]
+}
+
+# DataFrame oluştur
+df = pd.DataFrame(data)
+
+# Dosya yolunu ayarla ve xlsx olarak kaydet
+file_path = "/mnt/data/test-cases.xlsx"
+df.to_excel(file_path, index=False)
+
+file_path

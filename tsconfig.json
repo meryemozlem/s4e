@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es6",                         // JavaScript çıktısı olarak ES6'ya derlenecek
+      "module": "commonjs",                     // CommonJS modül sistemi kullanılacak
+      "strict": true,                           // Katı tür kontrolü aktif
+      "esModuleInterop": true,                  // ES modülleri ile uyumluluk
+      "skipLibCheck": true,                     // Kütüphane dosyalarını kontrol etme
+      "forceConsistentCasingInFileNames": true, // Dosya isimlerinde tutarlılığı zorunlu kılar
+      "outDir": "./dist",                       // Çıktı dosyaları dist klasöründe olacak
+      "rootDir": "./src",                       // Kaynak dosyaları src klasöründe
+      "resolveJsonModule": true,                // JSON dosyalarını modül olarak çözümleme
+      "moduleResolution": "node"                // Node.js modül çözümleme stratejisi
+    },
+    "include": [
+      "src/**/*.ts"                             // ts dosyaları src klasöründe yer alacak
+    ],
+    "exclude": [
+      "node_modules",                           // node_modules klasörü dışlanacak
+      "dist"                                    // dist klasörü dışlanacak
+    ]
+  }
+  
